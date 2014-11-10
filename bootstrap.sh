@@ -42,5 +42,8 @@ sudo update-rc.d odoo-server defaults
 sudo mkdir /var/log/odoo
 sudo chown odoo:root /var/log/odoo
 
+#add to vagrant group for permissions in sync directory
+sudo usermod -a -G vagrant odoo
+
 #thats all folks , just do vagrant reload
 
