@@ -12,7 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty32"
   config.vm.provision :shell, path: "bootstrap.sh"
-  config.vm.network :forwarded_port, host: 7777, guest: 8069 
+  config.vm.network :forwarded_port, host: 7777, guest: 8069
+  config.vm.synced_folder "src/", "/opt/odoo" 
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
